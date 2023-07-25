@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: url("https://cdn.pixabay.com/photo/2016/11/23/13/48/beach-1852945_1280.jpg") rgba(45, 156, 247, 0.763);
+  background-size: cover;
+  background-blend-mode: overlay;
+  /* background-color: ; */
+  font-family: sans-serif;
+  flex-direction: column;
+}
+
+.app{
+  padding: 10px 20px;
+  background-color: white;
+  width: 800px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.weatherInfo{
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* background-color: blue; */
+  margin-right: 10px;
+  border-right: 3px solid #eee;
+}
+
+.input{
+  display: flex;
+  gap: 20px;
+}
+
+input{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #eee;
+  width: 350px;
+}
+
+.input button{
+  border: none;
+  padding: 10px;
+  background: rgb(69, 183, 254);
+  font-weight: bold;
+  border-radius: 5px;
+  color: darkblue;
+  cursor: pointer;
+}
+

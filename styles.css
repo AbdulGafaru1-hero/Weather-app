@@ -16,13 +16,14 @@ body{
 h1{
   /* margin-top: 50px; */
   display: flex;
-  z-index: 1;
+  color: white;
+  font-weight:900;
 }
 
 .app{
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px 20px;
-  background-color: rgb(30, 30, 30);
+  background-color: blue;
   opacity: 0.8;
   width: 800px;
   display: flex;
@@ -31,6 +32,7 @@ h1{
 .location{
   font-style: italic;
   color: #DFBB61;
+  font-weight: bold;
 }
 .weatherInfo{
   display: flex;
@@ -73,16 +75,10 @@ input{
   gap: 20px;
   align-items: center;
   justify-content: space-between;
-  /* border-top: 1px solid #000; */
   padding-top: 10px;
-  /* border-bottom: 2px solid black; */
   margin-bottom: 10px;
 }
 
-.humidityDiv > img, .windDiv > img{
-  width: 30px;
-  color: #000 !important;
-}
 
 .mainWeather{
   display: flex;
@@ -107,7 +103,7 @@ input{
 
 .desc p{
   margin: 0;
-  margin-top: -20px;
+  margin-top: -15px;
 }
 
 .desc > h2, .tempDiv h2{
@@ -120,6 +116,10 @@ color: #DFBB61;
 }
 .tempDiv h2, p{
   margin: 0;
+  align-items: center;
+}
+.tempDiv h2{
+  margin-left: 10px;
 }
 .weathers p{
   color: skyblue;
@@ -148,4 +148,67 @@ color: #DFBB61;
 .favBtn:hover{
   background-color: #DFBB61;
   color: skyblue;
+}
+.favouriteWeather{
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.favourite{
+  display: flex;
+  flex-direction: column;
+}
+
+.fav{
+  /* width: 300px; */
+  background-color: rgb(241, 240, 240);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  align-items: center;
+  position: relative;
+}
+.close{
+  position: absolute;
+  color: red !important;
+  right: 10px;
+  top: -10px;
+  z-index: 100;
+  font-size: 18px;
+}
+.fav h4{
+  margin: 0;
+  color: blue;
+  margin-bottom: 20px;
+}
+.new{
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  display: flex !important;
+  flex-direction: column;
+}
+.new h2{
+font-size: 18px;
+margin: 0;
+color: #DFBB61;
+}
+
+.new p{
+  font-size: 12px;
+  margin: 0;
+  color: #303030;
+}
+
+.favouriteWeather h3{
+  color: white;
+}
+.elements{
+  display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
 }

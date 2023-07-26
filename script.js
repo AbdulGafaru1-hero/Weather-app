@@ -52,8 +52,9 @@ async function fetchWeatherData(city) {
     searchInput.value = "";
   });
 
-const favBtn = document.querySelector(".favBtn");
 
+  // add favourite city to localstorage and favourite component
+const favBtn = document.querySelector(".favBtn");
 favBtn.addEventListener("click", async () => {
   const myFav = JSON.parse(localStorage.getItem("favorites")) || [];
   const city = searchInput.value;
@@ -65,14 +66,18 @@ favBtn.addEventListener("click", async () => {
   } catch (error) {
     console.error('Error fetching and adding weather data to favorites:', error);
   }
+  myFavCity();
 });
+
+
+// fav city component 
 const myFavCity = () => {
   const myFav = JSON.parse(localStorage.getItem("favorites")) || [];
   fouvoriteUi.innerHTML = ""; 
 
-const favWeather = myFav.forEach(element => {
+const favWeather = myFav.forEach((element, index) => {
   fouvoriteUi.innerHTML += ` <div class="fav">
-  <h3 class="close">x</h3>
+  <h3 class="close" id=${index} onclick="deleteCity(this.id)">x</h3>
   <div class="countryText">
   <h4>Weather of ${element.myCity}, ${element.country}</h4> </div>
   <div class="elements"><div class="new">
@@ -93,3 +98,15 @@ const favWeather = myFav.forEach(element => {
 });
 }
 myFavCity();
+
+function deleteCity(index) {
+    let confirmDelete = confirm("You are about to delete this Note!");
+console.log("working");
+    if(confirmDelete == true) {
+      const myFav = JSON.parse(localStorage.getItem("favorites")) || [];
+    myFav.splice(index, 1);
+    localStorage.setItem("favorites", JSON.stringify(myFav));
+    myFavCity();
+    }}
+
+    // deleteCity();

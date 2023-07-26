@@ -178,6 +178,7 @@ color: #DFBB61;
   top: -10px;
   z-index: 100;
   font-size: 18px;
+  cursor: pointer;
 }
 .fav h4{
   margin: 0;

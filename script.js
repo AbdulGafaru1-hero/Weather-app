@@ -1,7 +1,5 @@
  
 
-const apiKey = "c57ba05eb97fd445061f54a80d1a7ca7";
-const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 
 const temperature = document.querySelector(".temperature");
 const myCity = document.querySelector(".location");
@@ -14,6 +12,8 @@ const searchWeather = document.querySelector(".search");
 
 
 
+const apiKey = "c57ba05eb97fd445061f54a80d1a7ca7";
+const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=`;
 async function fetchWeatherData(city) {
   const myFav = JSON.parse(localStorage.getItem("favorites")) || [];
   try {
@@ -45,7 +45,7 @@ async function fetchWeatherData(city) {
   searchWeather.addEventListener("click", () => {
     if (searchInput.value === "") {
       alert("please enter a city name")
-      return
+      return;
     } 
     fetchWeatherData(searchInput.value);
     fetchWeatherData(weatherData);
@@ -102,7 +102,7 @@ myFavCity();
 function deleteCity(index) {
     let confirmDelete = confirm("You are about to delete this Note!");
 console.log("working");
-    if(confirmDelete == true) {
+    if(confirmDelete) {
       const myFav = JSON.parse(localStorage.getItem("favorites")) || [];
     myFav.splice(index, 1);
     localStorage.setItem("favorites", JSON.stringify(myFav));

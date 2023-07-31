@@ -213,3 +213,90 @@ align-items: center;
 justify-content: space-between;
 gap: 20px;
 }
+
+/* Define the animation keyframes */
+@keyframes floatClouds {
+  0% {
+      transform: translateY(0);
+  }
+  25% {
+      transform: translateX(-20px);
+  }
+  50% {
+      transform: translateY(-20px); /* Change this value to adjust the height of the floating effect */
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the clouds container */
+.clouds-container {
+  animation: floatClouds 3s infinite; /* Change the duration (6s) to adjust the speed of the floating effect */
+}
+
+
+@media screen and (max-width: 768px) {
+  .app{
+    width: 700px;
+  }
+  .favouriteWeather h3{
+    text-align: center;
+  }
+ .fav h4{
+font-size: 12px;
+ }
+
+ .new h2{
+  font-size: 14px;
+ }
+ .new p{
+  font-size: 8px;
+ }
+}
+@media screen and (max-width: 424px) {
+  body{
+    margin: 0 20px;
+    padding: 0 10px;
+  }
+  .app{
+   flex-direction: column;
+   max-width:380px;
+  margin: 20px;
+  }
+  .weatherInfo{
+    border-right: none;
+    margin: 10px;
+  }
+  .input{
+    width: 350px;
+  }
+  h1{
+    font-size: 30px;
+    text-align: center;
+  }
+  .favouriteWeather h3{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .fav{
+max-width: 300px;
+  }
+.app{
+  max-width: 320px;
+}
+.input{
+  max-width: 300px;
+}
+.location{
+  text-align: center;
+}
+.weathers p{
+font-size: 12px;
+}
+h1{
+  font-size: 20px;
+}
+}
